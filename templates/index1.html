@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HydroClean Vision – Object Detection for Underwater Waste Solutions</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #00bcd4, #006064); /* Aquatic gradient */
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            max-width: 750px;
+            width: 100%;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #00796b; /* Dark teal */
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        h2 {
+            color: #004d40; /* Darker teal */
+            margin-top: 30px;
+            font-size: 1.6em;
+            font-weight: 600;
+        }
+
+        form {
+            margin-bottom: 30px;
+        }
+
+        input[type="file"] {
+            padding: 15px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 10px;
+            background-color: #b2ebf2; /* Light teal */
+            color: #004d40;
+            font-size: 16px;
+            width: 100%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="file"]:hover {
+            background-color: #80deea; /* Slightly darker teal */
+        }
+
+        button {
+            background-color: #00796b; /* Dark teal */
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #004d40; /* Darker teal on hover */
+        }
+
+        img {
+            margin-top: 30px;
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #a1a1a1;
+            letter-spacing: 1px;
+        }
+
+        .footer a {
+            color: #00796b;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #004d40;
+        }
+
+        /* Floating bubble effect */
+        .bubble {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #00796b;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            opacity: 0.6;
+            animation: bubble 5s infinite ease-in-out;
+        }
+
+        .bubble:nth-child(2) {
+            animation-delay: 1s;
+            width: 60px;
+            height: 60px;
+        }
+
+        .bubble:nth-child(3) {
+            animation-delay: 2s;
+            width: 55px;
+            height: 55px;
+        }
+
+        @keyframes bubble {
+            0% {
+                transform: translateX(-50%) translateY(0);
+                opacity: 0.6;
+            }
+            50% {
+                opacity: 0.4;
+                transform: translateX(-50%) translateY(-180px);
+            }
+            100% {
+                opacity: 0.6;
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>HydroClean Vision – Object Detection for Deepwater Waste Solutions</h1>
+        
+        <!-- Form to upload image -->
+        <form action="/predict" method="POST" enctype="multipart/form-data">
+            <input type="file" name="image" accept="image/*" required>
+            <button type="submit">Upload and Predict</button>
+        </form>
+
+        {% if image_url %}
+        <h2>Prediction Result</h2>
+        <img src="{{ image_url }}" alt="Predicted Image">
+        {% endif %}
+
+        
+        </div>
+    </div>
+
+    <!-- Floating bubbles for dynamic UI -->
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+
+</body>
+</html>
