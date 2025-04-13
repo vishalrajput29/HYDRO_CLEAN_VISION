@@ -45,6 +45,6 @@ def predict():
 
     # Return the processed image
     return send_file(output, mimetype='image/jpeg')
-
+#load
 if __name__ == '__main__':
     app.run(host="0.0.0.0",port=5000)
