@@ -11,7 +11,7 @@ app = Flask(__name__)
 #create app and load model
 # Load the trained YOLO model (update the path to your model)
 model = YOLO('best (1).pt')
-
+#starting of app
 # Route to serve the home page
 @app.route('/')
 def home():
