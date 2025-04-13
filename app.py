@@ -8,6 +8,7 @@ import cv2
 
 app = Flask(__name__)
 #create app
+#create app and load model
 # Load the trained YOLO model (update the path to your model)
 model = YOLO('best (1).pt')
 
