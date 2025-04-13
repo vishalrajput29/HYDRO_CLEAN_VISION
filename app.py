@@ -5,7 +5,7 @@ from PIL import Image
 import io
 import numpy as np
 import cv2
-
+#load model
 app = Flask(__name__)
 #create app
 #create app and load model
